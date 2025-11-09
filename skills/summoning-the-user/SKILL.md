@@ -54,8 +54,11 @@ When you've determined summoning is needed, follow this process:
 
 **Option A: OSA Script (macOS - no installation)**
 ```bash
-osascript -e 'display notification "Claude needs your input" with title "Claude Code"'
+osascript -e 'display notification "🤖 Claude needs your input" with title "Claude Code"' && osascript -e 'tell application "Terminal" to activate'
 ```
+- Shows 🤖 icon in the notification
+- Title: "Claude Code"
+- Clicking focuses the Terminal running Claude Code
 
 **Option B: Slack CLI**
 - Check if installed: `slack version`
