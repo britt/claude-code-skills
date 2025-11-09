@@ -98,4 +98,4 @@ Skills should follow this structure:
 
 ## License
 
-MIT
+[MIT](LICENSE)
