@@ -6,7 +6,11 @@ A collection of skills for Claude Code to enhance AI-assisted development workfl
 
 Skills are process documents that guide Claude through specific workflows and best practices. They help Claude make better decisions, follow proven patterns, and avoid common mistakes.
 
-## Available Skills
+## Skills Included
+
+This repository currently includes:
+
+- **summoning-the-user** - Decision framework for when to request user input
 
 ### summoning-the-user
 
@@ -29,7 +33,7 @@ Skills are process documents that guide Claude through specific workflows and be
 Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/claude-code-skills.git
+git clone https://github.com/britt/claude-code-skills.git
 cd claude-code-skills
 ```
 
