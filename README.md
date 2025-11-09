@@ -2,10 +2,6 @@
 
 A collection of skills for Claude Code to enhance AI-assisted development workflows.
 
-## What are Skills?
-
-Skills are process documents that guide Claude through specific workflows and best practices. They help Claude make better decisions, follow proven patterns, and avoid common mistakes.
-
 ## Skills Included
 
 This repository currently includes:
@@ -28,22 +24,45 @@ This repository currently includes:
 
 **Location:** `skills/summoning-the-user/SKILL.md`
 
-## Installation
+## Installing Skills in Claude Code
 
-Clone this repository:
+Skills can be installed in two locations:
 
+**Personal skills (available globally):**
 ```bash
-git clone https://github.com/britt/claude-code-skills.git
-cd claude-code-skills
+~/.claude/skills/
 ```
 
-## Using Skills
+**Project-specific skills:**
+```bash
+.claude/skills/
+```
 
-Skills are referenced in Claude Code's system context. To use a skill, Claude will:
+### Installation Methods
 
-1. Read the skill file
-2. Announce usage: "I'm using the [skill-name] skill to [purpose]"
-3. Follow the skill's process exactly
+**Option 1: Clone this repository to your personal skills directory**
+```bash
+# Install all skills globally
+git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claude-code-skills
+```
+
+**Option 2: Install individual skills**
+```bash
+# Copy a specific skill to your personal skills directory
+mkdir -p ~/.claude/skills/summoning-the-user
+cp skills/summoning-the-user/SKILL.md ~/.claude/skills/summoning-the-user/
+```
+
+**Option 3: Install for a specific project**
+```bash
+# Install skills for a single project
+mkdir -p .claude/skills
+cp -r skills/summoning-the-user .claude/skills/
+```
+
+**After installation:** Restart Claude Code to load the new skills.
+
+For more information, see the [official Claude Code Skills documentation](https://docs.claude.com/en/docs/claude-code/skills).
 
 ## Repository Structure
 
