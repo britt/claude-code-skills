@@ -6,21 +6,22 @@ A collection of skills for Claude Code to enhance AI-assisted development workfl
 
 This repository currently includes:
 
-- **summoning-the-user** - Decision framework for when to request user input
+- **summoning-the-user** - Gets user's attention when Claude needs input while running in the background
 
 ### summoning-the-user
 
-**Purpose:** Helps Claude identify when to block and request user input rather than proceeding with assumptions or guesses.
+**Purpose:** Gets the user's attention when Claude (or subagents) are running in the background and need user input to proceed.
 
 **Use when:**
-- An agent encounters a blocking decision mid-execution
+- An agent encounters a blocking decision while running in the background
+- The user is doing other things and needs to be notified that Claude needs input
 - Proceeding without user input could lead to wasted work or incorrect implementation
 
 **Key features:**
-- Decision framework for assessing when user input is needed
-- Risk-based criteria (high-risk = summon, low-risk = proceed)
-- External notification support (terminal-notifier, OSA Script, Slack CLI)
-- Proper terminal detection and activation
+- Decision framework for assessing when user input is needed (high-risk vs low-risk)
+- External notification support to grab user's attention (terminal-notifier, OSA Script, Slack CLI)
+- Proper terminal detection and activation - focuses the correct terminal app and window
+- Risk-based criteria to avoid over-summoning for trivial decisions
 
 **Location:** `skills/summoning-the-user/SKILL.md`
 
