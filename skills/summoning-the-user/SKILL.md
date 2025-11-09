@@ -54,11 +54,13 @@ When you've determined summoning is needed, follow this process:
 
 **Option A: OSA Script (macOS - no installation)**
 ```bash
-osascript -e 'display notification "🤖 Claude needs your input" with title "Claude Code"' && osascript -e 'tell application "Terminal" to activate'
+TERMINAL_APP="${TERM_PROGRAM:-Terminal}"
+osascript -e 'display notification "🤖 Claude needs your input" with title "Claude Code"' && osascript -e "tell application \"$TERMINAL_APP\" to activate"
 ```
 - Shows 🤖 icon in the notification
 - Title: "Claude Code"
-- Clicking focuses the Terminal running Claude Code
+- Automatically detects terminal app (iTerm2, Ghostty, Terminal.app, etc.) via `$TERM_PROGRAM`
+- Clicking activates the detected terminal application
 
 **Option B: Slack CLI**
 - Check if installed: `slack version`
