@@ -52,17 +52,50 @@ When you've determined summoning is needed, follow this process:
 
 **Check user preference, then use one of:**
 
-**Option A: OSA Script (macOS - no installation)**
+**Option A: terminal-notifier (macOS - requires installation)**
+
+```bash
+# Check if installed
+which terminal-notifier
+
+# If not installed, install via Homebrew
+brew install terminal-notifier
+
+# Get terminal bundle ID
+case "$TERM_PROGRAM" in
+  "iTerm.app") BUNDLE_ID="com.googlecode.iterm2" ;;
+  "Apple_Terminal") BUNDLE_ID="com.apple.Terminal" ;;
+  "WezTerm") BUNDLE_ID="com.github.wez.wezterm" ;;
+  "Ghostty") BUNDLE_ID="com.mitchellh.ghostty" ;;
+  "Warp") BUNDLE_ID="dev.warp.Warp-Stable" ;;
+  *) BUNDLE_ID="com.apple.Terminal" ;;
+esac
+
+# Send notification that activates terminal on click
+terminal-notifier -message "🤖 Claude needs your input" -title "Claude Code" -activate "$BUNDLE_ID"
+```
+
+**Notes:**
+- Requires `terminal-notifier` (install via `brew install terminal-notifier`)
+- Clicking notification focuses the terminal application
+- Auto-detects terminal type via `$TERM_PROGRAM`
+- Works with iTerm2, Terminal.app, Ghostty, WezTerm, Warp
+
+**Option B: OSA Script (macOS - no installation, basic)**
+
 ```bash
 TERMINAL_APP="${TERM_PROGRAM:-Terminal}"
-osascript -e 'display notification "🤖 Claude needs your input" with title "Claude Code"' && osascript -e "tell application \"$TERMINAL_APP\" to activate"
+osascript -e 'display notification "🤖 Claude needs your input" with title "Claude Code"' && \
+osascript -e "tell application \"$TERMINAL_APP\" to activate"
 ```
-- Shows 🤖 icon in the notification
-- Title: "Claude Code"
-- Automatically detects terminal app (iTerm2, Ghostty, Terminal.app, etc.) via `$TERM_PROGRAM`
-- Clicking activates the detected terminal application
 
-**Option B: Slack CLI**
+**Notes:**
+- No installation required but less reliable
+- Activates terminal immediately (not on click)
+- May open Script Editor on notification click
+- Consider using terminal-notifier or Slack CLI instead
+
+**Option C: Slack CLI**
 - Check if installed: `slack version`
 - If not installed: Follow https://docs.slack.dev/tools/slack-cli/guides/installing-the-slack-cli-for-mac-and-linux
 - Send notification: `slack chat send --channel @username --text "Claude needs your input"`
