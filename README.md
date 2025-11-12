@@ -7,6 +7,8 @@ A collection of skills for Claude Code to enhance AI-assisted development workfl
 This repository currently includes:
 
 - **summoning-the-user** - Gets user's attention when Claude needs input while running in the background
+- **writing-product-specs** - Write comprehensive product specification documents for new features or projects
+- **writing-user-stories** - Write properly formatted user stories for task definition
 
 ### summoning-the-user
 
@@ -24,6 +26,37 @@ This repository currently includes:
 - Risk-based criteria to avoid over-summoning for trivial decisions
 
 **Location:** `skills/summoning-the-user/SKILL.md`
+
+### writing-product-specs
+
+**Purpose:** Write comprehensive product specification documents that clearly communicate what we're building, why we're building it, and how we'll know it's successful.
+
+**Use when:**
+- Designing a new feature or planning a project that needs clear requirements documentation
+- Asked to write a product specification, product spec, or PRD (Product Requirements Document)
+- Need to communicate product requirements to stakeholders, engineers, or designers
+
+**Location:** `skills/writing-product-specs/SKILL.md`
+
+### writing-user-stories
+
+**Purpose:** Write properly formatted user stories for task definition that identify the persona, desired action, and expected benefit.
+
+**Use when:**
+- Asked to write a user story
+- Planning a feature and need to define user requirements
+
+**Location:** `skills/writing-user-stories/SKILL.md`
+
+## Building Skill Archives
+
+To create zip archives of all skills for distribution:
+
+```bash
+./package.sh
+```
+
+This will create a `dist/` directory containing zip files for each skill (e.g., `dist/summoning-the-user.zip`, `dist/writing-product-specs.zip`, `dist/writing-user-stories.zip`).
 
 ## Installing Skills in Claude Code
 
@@ -74,8 +107,12 @@ claude-code-skills/
 │   └── plans/               # Design documents for skills
 │       └── 2025-11-09-summoning-user-design.md
 └── skills/
-    └── summoning-the-user/  # Individual skill directories
-        └── SKILL.md         # Skill implementation
+    ├── summoning-the-user/  # Individual skill directories
+    │   └── SKILL.md         # Skill implementation
+    ├── writing-product-specs/
+    │   └── SKILL.md
+    └── writing-user-stories/
+        └── SKILL.md
 ```
 
 ## Contributing

@@ -55,3 +55,6 @@ venv/
 
 
 *.zip
+
+# Build output
+dist/
