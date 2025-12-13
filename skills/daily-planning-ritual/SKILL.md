@@ -22,9 +22,10 @@ This is a conversational ritual that takes 5-10 minutes:
 **Before asking any questions**, silently gather:
 
 1. **Calendar events** for today using `list_gcal_events`
-2. **Recent emails** (last 24 hours) using `search_gmail_messages` with `newer_than:1d` - look for urgencies
-3. **Static sections** by reading `references/static-sections-template.md` - contains Climbing Goals, Life Projects, Work Priorities, Work/Life Questions
-4. **Relevant Drive docs** if calendar shows meetings today - use `google_drive_search` to find related materials
+2. **iOS Reminders** - Use `reminder_search_v0` to get incomplete reminders, focusing on the "today" list or items due today
+3. **Recent emails** (last 24 hours) using `search_gmail_messages` with `newer_than:1d` - look for urgencies
+4. **Static sections** by reading `references/static-sections-template.md` - contains Climbing Goals, Life Projects, Work Priorities, Work/Life Questions
+5. **Relevant Drive docs** if calendar shows meetings today - use `google_drive_search` to find related materials
 
 Keep this context in mind but don't present it yet - it informs the questions you'll ask.
 
@@ -34,15 +35,14 @@ Ask questions in a natural, flowing conversation. Keep it concise - 5-10 minutes
 
 ### Task Collection (ask first)
 
-Before diving into reflection, ground the conversation in practical realities:
+Before diving into reflection, review what's already captured and ask for anything else:
 
-**"What tasks or things do you need to do today?"**
+**Present reminders and tasks you found**, then ask: **"Anything else you need to do today that's not captured yet?"**
 
-This captures:
-- Items from iOS Reminders
-- Chores or errands
-- Any commitments not yet in the calendar
-- Work tasks not reflected in meetings
+This ensures:
+- All iOS Reminders are accounted for
+- Any additional chores, errands, or commitments get added
+- Work tasks not reflected in meetings or reminders are captured
 
 ### Opening Questions (always ask these)
 
@@ -77,20 +77,18 @@ For each area, ask 1-2 focused questions informed by the context you gathered:
 
 ### Closing Questions
 
-No additional closing questions needed—the Question of the Day is now part of the plan itself.
+- **Pose one Life Question**: Select one from their Life Questions list for reflection. Introduce it naturally: "Something to sit with today: [question]"
 
 ## Step 3: Draft the Plan
 
 After gathering their responses, create a draft plan following this exact format:
+
 ```markdown
 Plan
 [1-2 sentence poetic statement about the day's priorities and desired feeling]
 
 Agenda for today
 * [List events from calendar and tasks mentioned]
-
-Question of the Day
-[Select one Life Question for focused reflection today]
 
 Climbing Goals
 [Copy from static sections]
