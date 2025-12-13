@@ -2,162 +2,114 @@
 
 A collection of skills for Claude to enhance AI-assisted development workflows.
 
-_Some of these skills are for Claude Code and some are just for Claude. Most should work in both but some rely on connections only available in the web version of Claude._
-
 ## Skills Included
 
-This repository currently includes:
-
-- **daily-planning-ritual** - Interactive daily planning ritual that guides holistic day planning across work and personal life
-- **summoning-the-user** - Gets user's attention when Claude needs input while running in the background
-- **writing-product-specs** - Write comprehensive product specification documents for new features or projects
-- **writing-user-stories** - Write properly formatted user stories for task definition
+| Skill | Description | Claude Code | Claude.ai |
+|-------|-------------|:-----------:|:---------:|
+| **daily-planning-ritual** | Interactive daily planning across work and personal life dimensions | * | * |
+| **summoning-the-user** | Gets user's attention when Claude needs input while running in the background | * | |
+| **writing-product-specs** | Write comprehensive product specification documents | * | * |
+| **writing-user-stories** | Write properly formatted user stories for task definition | * | * |
 
 ### daily-planning-ritual
 
-**Purpose:** Interactive morning practice that helps plan the entire day holistically across work and personal life dimensions through a reflective conversation.
+Interactive morning practice that helps plan the entire day holistically through a reflective conversation.
 
-**Use when:**
-- Requesting to plan your day with phrases like "plan the day", "plan my day", "plan today", or similar variations
-- Need a structured approach to daily planning that considers all life dimensions
-- Want to incorporate persistent goals and reflection questions into daily planning
+**Use when:** You want to plan your day with phrases like "plan the day", "plan my day", or "plan today"
 
-**Key features:**
-- Gathers context from calendar, emails, and static sections before planning
+**Features:**
+- Gathers context from calendar, emails, and static sections
 - Conversational workflow across life dimensions (work, fitness, relationship, social, adventure)
-- Creates plans with poetic opening statements and structured sections
-- Uses customizable static sections artifact for persistent goals and questions
-- Iterative refinement process before finalizing the plan
+- Creates plans with poetic opening statements
+- Iterative refinement before finalizing
 
-**Location:** `skills/daily-planning-ritual/SKILL.md`
-
-**Customization:** See `skills/daily-planning-ritual/README.md` for how to customize the skill using the static sections artifact.
+**Customization:** See `skills/daily-planning-ritual/README.md` for configuration options.
 
 ### summoning-the-user
 
-**Purpose:** Gets the user's attention when Claude (or subagents) are running in the background and need user input to proceed.
+Gets the user's attention when Claude (or subagents) are running in the background and need user input to proceed.
 
-**Use when:**
-- An agent encounters a blocking decision while running in the background
-- The user is doing other things and needs to be notified that Claude needs input
-- Proceeding without user input could lead to wasted work or incorrect implementation
+**Use when:** An agent encounters a blocking decision while running in the background
 
-**Key features:**
+**Features:**
 - Decision framework for assessing when user input is needed (high-risk vs low-risk)
-- External notification support to grab user's attention (terminal-notifier, OSA Script, Slack CLI)
-- Proper terminal detection and activation - focuses the correct terminal app and window
-- Risk-based criteria to avoid over-summoning for trivial decisions
-
-**Location:** `skills/summoning-the-user/SKILL.md`
+- External notification support (terminal-notifier, OSA Script, Slack CLI)
+- Proper terminal detection and activation
 
 ### writing-product-specs
 
-**Purpose:** Write comprehensive product specification documents that clearly communicate what we're building, why we're building it, and how we'll know it's successful.
+Write comprehensive product specification documents that clearly communicate what we're building, why, and how we'll know it's successful.
 
-**Use when:**
-- Designing a new feature or planning a project that needs clear requirements documentation
-- Asked to write a product specification, product spec, or PRD (Product Requirements Document)
-- Need to communicate product requirements to stakeholders, engineers, or designers
-
-**Location:** `skills/writing-product-specs/SKILL.md`
+**Use when:** Designing a new feature or asked to write a product spec/PRD
 
 ### writing-user-stories
 
-**Purpose:** Write properly formatted user stories for task definition that identify the persona, desired action, and expected benefit.
+Write properly formatted user stories that identify the persona, desired action, and expected benefit.
 
-**Use when:**
-- Asked to write a user story
-- Planning a feature and need to define user requirements
+**Use when:** Asked to write user stories or planning a feature
 
-**Location:** `skills/writing-user-stories/SKILL.md`
+## Installation
 
-## Building Skill Archives
+### Claude Code: Plugin Marketplace (Recommended)
 
-To create zip archives of all skills for distribution:
+Add this repository as a plugin marketplace, then install individual skills:
 
 ```bash
-./package.sh
+# Add the marketplace
+/plugin marketplace add britt/claude-code-skills
+
+# Install a specific skill
+/plugin install summoning-the-user
 ```
 
-This will create a `dist/` directory containing zip files for each skill (e.g., `dist/daily-planning-ritual.zip`, `dist/summoning-the-user.zip`, `dist/writing-product-specs.zip`, `dist/writing-user-stories.zip`).
+### Claude Code: Manual Installation
 
-## Installing Skills in Claude Code
+Skills can be installed globally or per-project.
 
-Skills can be installed in two locations:
-
-**Personal skills (available globally):**
+**Global installation** (available in all projects):
 ```bash
-~/.claude/skills/
-```
-
-**Project-specific skills:**
-```bash
-.claude/skills/
-```
-
-### Installation Methods
-
-**Option 1: Clone this repository to your personal skills directory**
-```bash
-# Install all skills globally
+# Clone the entire repository
 git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claude-code-skills
-```
 
-**Option 2: Install individual skills**
-```bash
-# Copy a specific skill to your personal skills directory
+# Or copy individual skills
 mkdir -p ~/.claude/skills/summoning-the-user
-cp skills/summoning-the-user/SKILL.md ~/.claude/skills/summoning-the-user/
+curl -o ~/.claude/skills/summoning-the-user/SKILL.md \
+  https://raw.githubusercontent.com/britt/claude-code-skills/main/skills/summoning-the-user/SKILL.md
 ```
 
-**Option 3: Install for a specific project**
+**Project-specific installation**:
 ```bash
-# Install skills for a single project
 mkdir -p .claude/skills
-cp -r skills/summoning-the-user .claude/skills/
+curl -o .claude/skills/summoning-the-user/SKILL.md \
+  --create-dirs \
+  https://raw.githubusercontent.com/britt/claude-code-skills/main/skills/summoning-the-user/SKILL.md
 ```
 
-**After installation:** Restart Claude Code to load the new skills.
+Restart Claude Code after installation to load new skills.
 
-For more information, see the [official Claude Code Skills documentation](https://docs.claude.com/en/docs/claude-code/skills).
+### Claude.ai (Web and iOS)
 
-## Repository Structure
+Skills can be added to Claude.ai projects as project knowledge:
 
-```
-claude-code-skills/
-├── README.md                 # This file
-├── docs/
-│   └── plans/               # Design documents for skills
-│       └── 2025-11-09-summoning-user-design.md
-└── skills/
-    ├── daily-planning-ritual/
-    │   ├── README.md        # Customization guide
-    │   └── SKILL.md         # Skill implementation
-    ├── summoning-the-user/  # Individual skill directories
-    │   └── SKILL.md         # Skill implementation
-    ├── writing-product-specs/
-    │   └── SKILL.md
-    └── writing-user-stories/
-        └── SKILL.md
-```
+1. **Download the skill file**
+   - Navigate to the skill in this repository (e.g., `skills/writing-product-specs/SKILL.md`)
+   - Download the raw file
 
-## Contributing
+2. **Add to your Claude.ai project**
+   - Open [claude.ai](https://claude.ai) and go to your project
+   - Click on **Project knowledge** in the sidebar
+   - Upload the `SKILL.md` file
 
-Skills should follow this structure:
+3. **Use the skill**
+   - The skill will be available in all conversations within that project
+   - Claude will automatically use it when the context matches the skill's description
 
-1. **Design Document** in `docs/plans/YYYY-MM-DD-topic-design.md`
-   - Overview and purpose
-   - Decision criteria or workflow
-   - Implementation details
-   - Examples
+**Note:** Some skills (like `summoning-the-user`) require Claude Code-specific features and won't work in Claude.ai.
 
-2. **Skill File** in `skills/skill-name/SKILL.md`
-   - YAML frontmatter with name and description
-   - Overview and core principles
-   - When to use the skill
-   - Step-by-step process
-   - Key principles table
-   - Anti-patterns
+## Documentation
+
+- [Contributing Guide](CONTRIBUTING.md) - Repository structure, creating skills, and contribution guidelines
+- [Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills) - Official documentation
 
 ## License
 
