@@ -77,18 +77,20 @@ For each area, ask 1-2 focused questions informed by the context you gathered:
 
 ### Closing Questions
 
-- **Pose one Life Question**: Select one from their Life Questions list for reflection. Introduce it naturally: "Something to sit with today: [question]"
+No additional closing questions needed—the Question of the Day is now part of the plan itself.
 
 ## Step 3: Draft the Plan
 
 After gathering their responses, create a draft plan following this exact format:
-
 ```markdown
 Plan
 [1-2 sentence poetic statement about the day's priorities and desired feeling]
 
 Agenda for today
 * [List events from calendar and tasks mentioned]
+
+Question of the Day
+[Select one Life Question for focused reflection today]
 
 Climbing Goals
 [Copy from static sections]
@@ -120,6 +122,15 @@ The opening statement should:
 - "Today is about presence with others and trust in the process."
 
 Draw from their responses about purpose, desired feeling, and the overall shape of their day.
+
+### Selecting the Question of the Day
+
+Claude picks one Life Question for the user—do not ask them to choose. Selection should be informed by:
+- The day's main purpose and activities
+- Themes that emerged in the conversation
+- Productive tension or resonance with what's planned
+
+When presenting the draft plan, briefly explain why you chose this question (1-2 sentences). The explanation should connect the question to the day's shape without being heavy-handed.
 
 ## Step 4: Refine
 
