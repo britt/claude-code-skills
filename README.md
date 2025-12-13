@@ -1,14 +1,37 @@
-# Claude Code Skills
+# Claude Skills
 
-A collection of skills for Claude Code to enhance AI-assisted development workflows.
+A collection of skills for Claude to enhance AI-assisted development workflows.
+
+_Some of these skills are for Claude Code and some are just for Claude. Most should work in both but some rely on connections only available in the web version of Claude._
 
 ## Skills Included
 
 This repository currently includes:
 
+- **daily-planning-ritual** - Interactive daily planning ritual that guides holistic day planning across work and personal life
 - **summoning-the-user** - Gets user's attention when Claude needs input while running in the background
 - **writing-product-specs** - Write comprehensive product specification documents for new features or projects
 - **writing-user-stories** - Write properly formatted user stories for task definition
+
+### daily-planning-ritual
+
+**Purpose:** Interactive morning practice that helps plan the entire day holistically across work and personal life dimensions through a reflective conversation.
+
+**Use when:**
+- Requesting to plan your day with phrases like "plan the day", "plan my day", "plan today", or similar variations
+- Need a structured approach to daily planning that considers all life dimensions
+- Want to incorporate persistent goals and reflection questions into daily planning
+
+**Key features:**
+- Gathers context from calendar, emails, and static sections before planning
+- Conversational workflow across life dimensions (work, fitness, relationship, social, adventure)
+- Creates plans with poetic opening statements and structured sections
+- Uses customizable static sections artifact for persistent goals and questions
+- Iterative refinement process before finalizing the plan
+
+**Location:** `skills/daily-planning-ritual/SKILL.md`
+
+**Customization:** See `skills/daily-planning-ritual/README.md` for how to customize the skill using the static sections artifact.
 
 ### summoning-the-user
 
@@ -56,7 +79,7 @@ To create zip archives of all skills for distribution:
 ./package.sh
 ```
 
-This will create a `dist/` directory containing zip files for each skill (e.g., `dist/summoning-the-user.zip`, `dist/writing-product-specs.zip`, `dist/writing-user-stories.zip`).
+This will create a `dist/` directory containing zip files for each skill (e.g., `dist/daily-planning-ritual.zip`, `dist/summoning-the-user.zip`, `dist/writing-product-specs.zip`, `dist/writing-user-stories.zip`).
 
 ## Installing Skills in Claude Code
 
@@ -107,6 +130,9 @@ claude-code-skills/
 │   └── plans/               # Design documents for skills
 │       └── 2025-11-09-summoning-user-design.md
 └── skills/
+    ├── daily-planning-ritual/
+    │   ├── README.md        # Customization guide
+    │   └── SKILL.md         # Skill implementation
     ├── summoning-the-user/  # Individual skill directories
     │   └── SKILL.md         # Skill implementation
     ├── writing-product-specs/
