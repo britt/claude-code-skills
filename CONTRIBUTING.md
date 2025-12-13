@@ -2,6 +2,8 @@
 
 Guidelines for contributing to this skills repository.
 
+🤷 **Real talk:** Skills are just markdown files and setting up your own marketplace is literally one JSON file. You probably want to make your own repo instead of contributing here. But hey, if you've got improvements to my skills or want to share something cool, I'm happy to post it! PRs welcome. 🎉
+
 ## Repository Structure
 
 ```
