@@ -1,0 +1,70 @@
+{
+  "name": "claude-code-skills",
+  "owner": {
+    "name": "Britt Crawford",
+    "email": "britt@brittcrawford.com"
+  },
+  "metadata": {
+    "description": "A collection of skills for Claude Code to enhance AI-assisted development workflows",
+    "version": "1.0.0",
+    "pluginRoot": "./skills"
+  },
+  "plugins": [
+    {
+      "name": "summoning-the-user",
+      "source": "./skills/summoning-the-user",
+      "description": "Use when an agent encounters a blocking decision or when proceeding without user input could lead to wasted work - helps Claude determine when to block and request user input versus making reasonable assumptions",
+      "version": "1.0.0",
+      "author": {
+        "name": "Britt Crawford"
+      },
+      "repository": "https://github.com/britt/claude-code-skills",
+      "license": "MIT",
+      "keywords": ["decision-making", "user-input", "agent-workflow"],
+      "category": "workflow",
+      "tags": ["subagent", "blocking", "decisions"]
+    },
+    {
+      "name": "daily-planning-ritual",
+      "source": "./skills/daily-planning-ritual",
+      "description": "Interactive daily planning ritual that guides the user through a reflective conversation across all life dimensions (work, fitness, relationship, social, adventure) and produces a holistic day plan",
+      "version": "1.0.0",
+      "author": {
+        "name": "Britt Crawford"
+      },
+      "repository": "https://github.com/britt/claude-code-skills",
+      "license": "MIT",
+      "keywords": ["planning", "productivity", "daily-routine"],
+      "category": "productivity",
+      "tags": ["planning", "ritual", "life-management"]
+    },
+    {
+      "name": "writing-product-specs",
+      "source": "./skills/writing-product-specs",
+      "description": "Write comprehensive product specification documents for new features or projects that clearly communicate what we're building, why, and how we'll know it's successful",
+      "version": "1.0.0",
+      "author": {
+        "name": "Britt Crawford"
+      },
+      "repository": "https://github.com/britt/claude-code-skills",
+      "license": "MIT",
+      "keywords": ["product", "specifications", "documentation"],
+      "category": "documentation",
+      "tags": ["product-spec", "PRD", "requirements"]
+    },
+    {
+      "name": "writing-user-stories",
+      "source": "./skills/writing-user-stories",
+      "description": "Write properly formatted user stories for task definition that identify the persona, desired action, and expected benefit",
+      "version": "1.0.0",
+      "author": {
+        "name": "Britt Crawford"
+      },
+      "repository": "https://github.com/britt/claude-code-skills",
+      "license": "MIT",
+      "keywords": ["user-stories", "agile", "requirements"],
+      "category": "documentation",
+      "tags": ["user-stories", "agile", "planning"]
+    }
+  ]
+}
