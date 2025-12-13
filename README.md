@@ -91,14 +91,14 @@ Restart Claude Code after installation to load new skills.
 
 Skills can be added to Claude.ai projects as project knowledge:
 
-1. **Download the skill file**
-   - Navigate to the skill in this repository (e.g., `skills/writing-product-specs/SKILL.md`)
-   - Download the raw file
+1. **Download the skill zip file**
+   - Go to the [Releases page](https://github.com/britt/claude-code-skills/releases/)
+   - Download the zip file for the skill you want (e.g., `writing-product-specs.zip`)
 
 2. **Add to your Claude.ai project**
    - Open [claude.ai](https://claude.ai) and go to your project
    - Click on **Project knowledge** in the sidebar
-   - Upload the `SKILL.md` file
+   - Upload the zip file
 
 3. **Use the skill**
    - The skill will be available in all conversations within that project
