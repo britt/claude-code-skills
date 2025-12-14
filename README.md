@@ -111,6 +111,11 @@ Skills can be added to Claude.ai projects as project knowledge:
 - [Contributing Guide](CONTRIBUTING.md) - Repository structure, creating skills, and contribution guidelines
 - [Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills) - Official documentation
 
+## 🌟 Bonus! 🌟
+
+I also added my [CLAUDE.md for good Test Driven Development](./CLAUDE.tdd.rules.md). There are a few **&lt;angle bracketed sections&gt;** you will want to fill in before using it.
+It also relies on IMPLEMENTATION_PLAN.md that outlines how Claude should go about building the project. You can ask Claude to write this for you. The best way I've found is using [Jesse Vincent's brainstorm skill](https://github.com/obra/superpowers-marketplace).
+
 ## License
 
 [MIT](LICENSE)
