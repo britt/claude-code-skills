@@ -29,6 +29,8 @@ Interactive morning practice that helps plan the entire day holistically through
 
 Gets the user's attention when Claude (or subagents) are running in the background and need user input to proceed.
 
+(_I don't think this one actually works yet. It never uses it. But its a good idea._ 🤷‍♂)
+
 **Use when:** An agent encounters a blocking decision while running in the background
 
 **Features:**
