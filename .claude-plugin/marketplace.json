@@ -65,6 +65,34 @@
       "keywords": ["user-stories", "agile", "requirements"],
       "category": "documentation",
       "tags": ["user-stories", "agile", "planning"]
+    },
+    {
+      "name": "setting-up-a-project",
+      "source": "./skills/setting-up-a-project",
+      "description": "Author CLAUDE.md with project purpose, tech stack, and development practices before scaffolding code",
+      "version": "1.0.0",
+      "author": {
+        "name": "Britt Crawford"
+      },
+      "repository": "https://github.com/britt/claude-code-skills",
+      "license": "MIT",
+      "keywords": ["project-setup", "claude-md", "configuration"],
+      "category": "workflow",
+      "tags": ["project-setup", "tdd", "best-practices"]
+    },
+    {
+      "name": "writing-verification-plans",
+      "source": "./skills/writing-verification-plans",
+      "description": "Create real-world acceptance testing procedures that validate projects work in actual scenarios, never using mocks",
+      "version": "1.0.0",
+      "author": {
+        "name": "Britt Crawford"
+      },
+      "repository": "https://github.com/britt/claude-code-skills",
+      "license": "MIT",
+      "keywords": ["verification", "acceptance-testing", "quality"],
+      "category": "workflow",
+      "tags": ["testing", "verification", "acceptance"]
     }
   ]
 }
