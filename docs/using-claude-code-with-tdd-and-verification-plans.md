@@ -1,290 +1,94 @@
----
-name: using-claude-code-with-tdd-and-verification-plans
-description: How to set up Claude Code with strict TDD rules and verification plans so it can work with minimal intervention
----
+# Using TDD and Verification Plans with Claude: My Zero-Compromise Setup
 
-# How I use Claude Code with TDD and verification plans
+Most code assistants can whip up a function or two. But what does it take for an AI engineer to actually work with discipline—to be trusted letting changes through the door without handholding?
 
-This guide explains how to set up Claude Code so it can help with real development work while staying disciplined.
+Here’s the system I’ve found that works: combine strict test-driven development (TDD) rules with explicit verification plans, and never let up.
 
-The process relies on three pieces working together:
+## Why So Strict?
 
-- A strict TDD rule set in `rules/TDD.rules.md`
-- The `setting-up-a-project` skill
-- The `writing-verification-plans` skill
+AI models like Claude can code, but they’re only as robust as the rules and feedback you enforce. I don’t want to just generate code: I want proof that it works, the way a human developer might need to demonstrate their changes in production-like conditions. That has two pillars:
 
-The goal is simple: Claude should never ship code without tests first, and it should never call a task complete until it proves the code works in a realistic environment.
+- **TDD, with no loopholes**
+- **Explicit verification plans that prove real-world behavior**
 
-## Start by setting up the project
+Here’s how I set this up, and why these pieces fit so well together.
 
-Begin with the `setting-up-a-project` skill.
+## Starting with a Solid Project Definition
 
-That skill has one job: help Claude create a CLAUDE.md file that defines what the project is, how it is built and tested, and how Claude is expected to work.
+First, I insist on documenting exactly what the project is before any code appears. That means capturing:
 
-From the skill file:
+- **Project Overview** (What are we building? What’s the problem? How are we approaching it?)
+- **Tech Stack** (Language, runtime, test framework, linter, build tool, and key libraries)
+- **Development Practices** (What are the non-negotiables like TDD?)
 
-> Help Claude author a CLAUDE.md file that defines a project's purpose, development practices, and tech stack before scaffolding code.
+I use a project setup checklist (modeled after my own `setting-up-a-project` skill) to fill out a CLAUDE.md with these sections. The result: everyone—including the AI—knows the project’s purpose and technical rules, in writing.
 
-The skill walks Claude through three main areas:
+## TDD Rules: No Tests, No Code
 
-1. Project overview
-2. Tech stack
-3. Development practices
-
-### Project overview
-
-Claude asks questions (directly or through `obra/brainstorming`) to fill out a `## Project Overview` section in CLAUDE.md:
-
-```markdown
-## Project Overview
-
-**[Project Name]**: [One-line description]
-
-### Problem
-
-[Description of the problem being solved]
-
-### Approach
-
-[High-level explanation of how the project solves the problem]
-```
-
-This forces you and Claude to agree on what the project is for before any code exists.
-
-### Tech stack
-
-Next, the skill has Claude confirm the language, runtime, testing tools, build tools, and linting.
-
-From the skill:
-
-> Ask the user about each of these areas. Even if something was mentioned during brainstorming, confirm it explicitly.
-
-Claude then records the answers in a `## Tech Stack` section in CLAUDE.md:
-
-```markdown
-## Tech Stack
-
-- **Language**: [Language and version]
-- **Runtime**: [Runtime environment]
-- **Package Manager**: [Package manager]
-- **Testing**: [Testing framework]
-- **Linting**: [Linter and formatter]
-- **Build**: [Build tool]
-- **Key Libraries**: [List of essential libraries]
-```
-
-This matters because the TDD rules and verification plan both assume there is a clear way to run tests, build the project, and check linting.
-
-## Make TDD non‑negotiable
-
-The `setting-up-a-project` skill makes TDD mandatory by copying the full contents of `rules/TDD.rules.md` into CLAUDE.md:
-
-> Read the contents of `@rules/TDD.rules.md` and copy it verbatim into CLAUDE.md. TDD is non-negotiable for all projects set up with this skill.
-
-The TDD rules file lays out a very strict process.
-
-### The iron law: tests first, always
-
-The rules start with:
+For me, TDD isn’t just a guideline. It’s in writing:
 
 > **The Iron Law**: NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
 
-Every change must follow this loop:
+Every change—yes, every one—must loop through:
+1. Write a failing test for the feature or fix (RED)
+2. Run it to watch it fail for the expected reason
+3. Write the minimal code to pass (GREEN)
+4. Confirm all tests pass
+5. Refactor with everything green
 
-1. RED: Write a failing test first
-2. Verify RED: Run the test and watch it fail for the right reason
-3. GREEN: Write the minimal code to make the test pass
-4. Verify GREEN: Run the test and confirm it passes
-5. REFACTOR: Clean up while tests stay green
+If Claude (or a human!) tries to sneak in production work without a failing test, or just says, “I’ll add tests later,” I revert or delete that code. The project includes a `rules/TDD.rules.md` with the full manifesto and hard requirements:
 
-If any of this is skipped or reversed, the rules say you must delete the code and start again.
+- At least 90% line, function, and statement coverage (85% for branches)
+- A matching test file for every production file
+- Nothing is "done" until all tests, builds, and linting pass **and** coverage is above threshold
+- Developers are to “commit early, commit often,” one cycle at a time
 
-The violations section is blunt:
+## But I Don’t Stop There: Real-World Verification
 
-> "I'll add tests later" → DELETE CODE NOW
->
-> "Just this once without tests" → NO. DELETE CODE.
+Code isn’t done just because the tests pass. Next up is the verification plan—a checklist for proving that new changes behave correctly, in real or production-like environments.
 
-### Coverage and file layout
+### How the Verification Plan Works
 
-The rules also set hard minimum coverage:
+The plan is codified in a `VERIFICATION_PLAN.md`, and it covers:
 
-- Lines: 90%+
-- Functions: 90%+
-- Branches: 85%+
-- Statements: 90%+
+- **Prerequisites:** What must be set up first (test systems running, accounts, data fixtures, etc.)
+- **Scenarios:** Each real-world use case, with steps, expected outcomes, and criteria for success
+- **Rules:** Never accept mocks/fakes as “good enough”; use real systems, or at least fully running copies
 
-Coverage “below threshold = Implementation incomplete”.
-
-For structure, every production file must have a matching test file, for example:
-
-- `src/example.ts` → `src/__tests__/example.test.ts`
-- `src/another-example.ts` → `src/__tests__/another-example.test.ts`
-
-This keeps Claude from scattering untested files through the tree.
-
-### What “done” means under TDD
-
-The rules define when a task is actually complete:
-
-> **MANDATORY RULE**: NO TASK IS COMPLETE until:
-> - ✅ ALL tests pass (100% green)
-> - ✅ Build succeeds with ZERO errors
-> - ✅ NO linter errors or warnings
-> - ✅ Coverage meets minimum thresholds (90%+)
-> - ✅ Progress documented in PROGRESS.md
-
-Anything less is considered incomplete work.
-
-There is also a strong push to "COMMIT EARLY, COMMIT OFTEN". Commits are expected after each full TDD cycle, with all tests passing and coverage in place.
-
-This combination keeps Claude from drifting into large, untested changes.
-
-## Add a verification plan for real‑world behavior
-
-Good unit tests are not enough. The core of this setup is an explicit verification plan.
-
-The `setting-up-a-project` skill requires Claude to use the `writing-verification-plans` skill:
-
-> Use the `writing-verification-plans` skill to create a verification plan. This produces a VERIFICATION_PLAN.md file that should be linked in CLAUDE.md.
-
-In CLAUDE.md, that shows up as:
+For example, each scenario is laid out like this:
 
 ```markdown
-## Verification
-
-See @VERIFICATION_PLAN.md for acceptance testing procedures.
+### Scenario: [Name]
+Context: The system is in this known state…
+Steps: 1. Do this… 2. Do that…
+Success Criteria: - [ ] Outcome A; - [ ] Outcome B
+If Blocked: When to escalate or ask for human review
 ```
 
-The `writing-verification-plans` skill then defines what goes into VERIFICATION_PLAN.md and how Claude should use it.
+### Running the Plan
 
-### Verification is not mocks or fakes
+After every feature or fix, Claude runs through the plan:
 
-The skill opens with a clear definition:
+1. Makes sure everything needed for real-world testing is ready
+2. Walks through each scenario—documents every step taken and what was observed
+3. Checks off each success criterion, with notes and evidence for both passes and failures
+4. Logs results in a detailed verification log (not just “it works!” but specifics: what, how, and whether it really passes, with evidence)
 
-> **Core principle:** Verification is not integration testing. It uses real systems, never mocks or fakes. A test environment is acceptable only if it's a fully running copy of the system being integrated with.
+If any scenario fails or gets blocked, the process pauses. No "mostly passes"—all tests and verifications must succeed.
 
-This rule keeps Claude from “verifying” code against fake services or toy setups. Either it runs against real systems (or full copies), or it is not verification.
+## The Workflow, In Practice
 
-### Asking for real scenarios
+So, putting all this together, the typical flow looks like:
 
-When Claude writes VERIFICATION_PLAN.md, it has to ask about real-world scenarios.
+1. **Project starts**: Document everything in CLAUDE.md (purpose, stack, rules)
+2. **TDD in action**: For every change, write a failing test, see it fail, code to pass, confirm all green, document progress
+3. **Verify for real**: Execute verification scenarios in order; log actions and evidence; flag any failures immediately
+4. **Done means proven**: Only when both code/tests and verification steps pass is the work considered complete
 
-The skill says to gather, for each scenario:
+## The Payoff
 
-1. What is being tested?
-2. What does success look like?
-3. What environment is needed?
-4. What could go wrong?
+I’ve found that this system—rigid as it sounds—actually gives both the AI engineer and the human reviewer huge confidence. No scary half-tested branches, no “surprise!” bugs, no unverified integrations.
 
-The plan format looks like this:
+Best of all: Claude (or any code assistant or junior dev) has clear, mechanical steps to follow. It’s almost impossible to drift into bad habits.
 
-```markdown
-# Verification Plan
-
-## Prerequisites
-
-[List everything needed before verification can run]
-- Test environment setup instructions
-- Required accounts or credentials
-- Sample data or test fixtures
-- External systems that must be running
-
-## Scenarios
-
-### Scenario 1: [Name]
-
-**Context**: [What state the system should be in before starting]
-
-**Steps**:
-1. [Specific action Claude should take]
-2. [Next action]
-3. [Continue until complete]
-
-**Success Criteria**:
-- [ ] [Observable outcome that must be true]
-- [ ] [Another required outcome]
-
-**If Blocked**: [When to stop and ask developer for help]
-```
-
-Every scenario needs clear, observable success criteria. Claude cannot just say “it seems fine”. It has to check specific outcomes.
-
-### Run verification after every task
-
-The most important rule in this setup is that Claude does not wait for you to ask for verification.
-
-From the skill:
-
-> **Verification runs automatically after completing any task.** Do not wait for the developer to request it.
-
-The process is:
-
-1. Read VERIFICATION_PLAN.md
-2. Confirm prerequisites are met
-3. Execute each scenario in order
-4. For each step, document what was done and what was observed
-5. Check every success criterion
-6. Produce a detailed verification log
-
-The log format is also defined:
-
-```markdown
-## Verification Log - [Timestamp]
-
-### Task Completed
-[Brief description of what was just implemented]
-
-### Scenarios Executed
-
-#### Scenario 1: [Name]
-**Status**: PASS / FAIL / BLOCKED
-
-**Steps Executed**:
-1. [What was done] → [What was observed]
-2. [What was done] → [What was observed]
-
-**Success Criteria**:
-- [x] [Criterion] - PASSED: [evidence]
-- [ ] [Criterion] - FAILED: [what went wrong]
-
-**Notes**: [Any relevant observations]
-```
-
-Claude is expected to log what happened, not just say “verification passed”. If a scenario fails, verification fails.
-
-The rules table in the skill summarizes the expectations:
-
-| Rule | Reason |
-|------|--------|
-| No mocks, ever | Verification must prove real-world behavior |
-| Run after every task | Catch issues before moving on |
-| Detailed logging | Developer needs to see what was tested |
-| Ask when blocked | Wrong assumptions waste time |
-| All scenarios must pass | Partial success = failure |
-
-## How these pieces work together
-
-Putting this all together gives Claude a clear workflow.
-
-1. Use `setting-up-a-project` to create CLAUDE.md
-   - Define the project overview
-   - Lock in the tech stack
-   - Embed the full TDD rules
-   - Link to VERIFICATION_PLAN.md
-2. Use `writing-verification-plans` to create VERIFICATION_PLAN.md
-   - Capture realistic scenarios
-   - Write concrete steps and success criteria
-   - Spell out prerequisites and “ask for help” conditions
-3. For every task:
-   - Follow the TDD rules: RED → GREEN → REFACTOR, with coverage and progress documented
-   - When the code and tests are in place, run the verification plan
-   - Execute each scenario against real systems or full copies
-   - Record a detailed verification log, including any failures or blocks
-   - Only then treat the task as complete
-
-With this setup, Claude does not need constant correction.
-
-The TDD rules keep its code changes small, tested, and documented.
-
-The verification plan forces it to prove that those changes behave correctly in real conditions, and to show you the evidence before it calls the work done.
+If you want AI code you can trust, don’t settle for "tests pass". Demand a documented, reproducible process for real-world success, and check that box every time.
