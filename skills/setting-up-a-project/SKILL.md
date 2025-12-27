@@ -97,14 +97,56 @@ Document in CLAUDE.md under a `## Tech Stack` section:
 - **Key Libraries**: [List of essential libraries]
 ```
 
-## Step 3: Establish the development practices
+## Step 3: Establish Development Practices
 
-- Make sure to use ../../rules/TDD.rules.md for test driven development. Copy it's contents into CLAUDE.md
-- Establish a verification plan. Verification is separate from unit testing or integration testing. It is acceptance testing in a real world scenario. This plan should be written to VERIFICATION_PLAN.md and linked in CLAUDE.md.
+### TDD Rules (Mandatory)
 
-## Notes
+Read the contents of `@rules/TDD.rules.md` and copy it verbatim into CLAUDE.md. TDD is non-negotiable for all projects set up with this skill.
 
-- Use obra/brainstorming to define the project
-- Specify the tech stack
-- Establish TDD rules and development practices
-- Define and write verification strategy
+### Git Practices
+
+Ask the user about their preferred git workflow, then document it in CLAUDE.md:
+
+1. **Branching strategy** - Feature branches, trunk-based, or git worktrees?
+2. **Branch naming** - Convention for naming branches (e.g., `feature/`, `fix/`, `chore/`)
+3. **Worktrees** - If using worktrees, establish conventions for worktree location and naming
+
+### Commit Early, Commit Often (CRITICAL)
+
+**This rule is non-negotiable.** Add the following to CLAUDE.md:
+
+```markdown
+## Git Commit Rules
+
+**COMMIT EARLY, COMMIT OFTEN** - This is mandatory.
+
+- Commit after every successful TDD cycle (RED-GREEN-REFACTOR)
+- Commit after completing any discrete unit of work
+- Commit before switching context or taking breaks
+- Never have more than 30 minutes of uncommitted work
+- Each commit should be atomic: one logical change per commit
+
+Why this matters:
+- Small commits are easier to review and revert
+- Frequent commits prevent loss of work
+- Atomic commits make git history useful for debugging
+- Regular commits force you to think in small, testable increments
+```
+
+### Verification Plan
+
+Use the `writing-verification-plans` skill to create a verification plan. This produces a VERIFICATION_PLAN.md file that should be linked in CLAUDE.md:
+
+```markdown
+## Verification
+
+See @VERIFICATION_PLAN.md for acceptance testing procedures.
+```
+
+### Output
+
+After completing this step, CLAUDE.md should contain:
+- Full TDD rules (copied from TDD.rules.md)
+- Git workflow and branching conventions
+- Commit early, commit often rules
+- Link to VERIFICATION_PLAN.md
