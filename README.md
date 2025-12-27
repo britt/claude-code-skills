@@ -7,9 +7,11 @@ A collection of skills for Claude to enhance AI-assisted development workflows.
 | Skill | Description | Claude Code | Claude.ai |
 |-------|-------------|:-----------:|:---------:|
 | **daily-planning-ritual** | Interactive daily planning across work and personal life dimensions | * | * |
+| **setting-up-a-project** | Author CLAUDE.md with project purpose, tech stack, and development practices | * | |
 | **summoning-the-user** | Gets user's attention when Claude needs input while running in the background | * | |
 | **writing-product-specs** | Write comprehensive product specification documents | * | * |
 | **writing-user-stories** | Write properly formatted user stories for task definition | * | * |
+| **writing-verification-plans** | Create real-world acceptance testing procedures | * | |
 
 ### daily-planning-ritual
 
@@ -24,6 +26,18 @@ Interactive morning practice that helps plan the entire day holistically through
 - Iterative refinement before finalizing
 
 **Customization:** See `skills/daily-planning-ritual/README.md` for configuration options.
+
+### setting-up-a-project
+
+Author a CLAUDE.md file that defines project purpose, tech stack, and development practices before scaffolding code.
+
+**Use when:** Setting up a new project or when no CLAUDE.md exists
+
+**Features:**
+- Uses obra/brainstorming to define project purpose
+- Establishes tech stack with sensible defaults
+- Copies TDD rules and git practices (commit early, commit often)
+- Creates verification plan via writing-verification-plans skill
 
 ### summoning-the-user
 
@@ -49,6 +63,18 @@ Write comprehensive product specification documents that clearly communicate wha
 Write properly formatted user stories that identify the persona, desired action, and expected benefit.
 
 **Use when:** Asked to write user stories or planning a feature
+
+### writing-verification-plans
+
+Create verification plans for real-world acceptance testing. Verification uses actual systems, never mocks.
+
+**Use when:** Setting up a new project or when a project needs acceptance testing procedures
+
+**Features:**
+- Defines scenarios with concrete success criteria
+- Instructions for Claude to execute and validate
+- Runs automatically after completing tasks
+- Detailed verification logs
 
 ## Installation
 
@@ -108,15 +134,34 @@ Skills can be added to Claude.ai projects as project knowledge:
 
 **Note:** Some skills (like `summoning-the-user`) require Claude Code-specific features and won't work in Claude.ai.
 
+## Rules
+
+The `rules/` directory contains reusable rule sets that can be copied into your project's CLAUDE.md.
+
+### TDD.rules.md
+
+Strict Test-Driven Development rules for Claude. Used by the `setting-up-a-project` skill.
+
+**Key rules:**
+- No production code without a failing test first (RED-GREEN-REFACTOR)
+- 90%+ test coverage required on all metrics
+- Violations mean delete and start over
+- Commit early, commit often (after every TDD cycle)
+- Tasks aren't complete until tests pass, build succeeds, and no linter errors
+
+**Usage:** The `setting-up-a-project` skill copies this file verbatim into your project's CLAUDE.md. You can also copy it manually:
+
+```bash
+curl -o CLAUDE.md \
+  https://raw.githubusercontent.com/britt/claude-code-skills/main/rules/TDD.rules.md
+```
+
+Fill in the placeholder commands (`<test command>`, `<build command>`, etc.) for your tech stack.
+
 ## Documentation
 
 - [Contributing Guide](CONTRIBUTING.md) - Repository structure, creating skills, and contribution guidelines
 - [Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills) - Official documentation
-
-## 🌟 Bonus! 🌟
-
-I also added my [CLAUDE.md for good Test Driven Development](./CLAUDE.tdd.rules.md). There are a few **&lt;angle bracketed sections&gt;** you will want to fill in before using it.
-It also relies on IMPLEMENTATION_PLAN.md that outlines how Claude should go about building the project. You can ask Claude to write this for you. The best way I've found is using [Jesse Vincent's superpowers](https://github.com/obra/superpowers-marketplace), specifically brainstorming and writing-plans.
 
 ## License
 
