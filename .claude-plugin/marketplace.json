@@ -70,7 +70,7 @@
       "name": "setting-up-a-project",
       "source": "./skills/setting-up-a-project",
       "description": "Author CLAUDE.md with project purpose, tech stack, and development practices before scaffolding code",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "Britt Crawford"
       },
