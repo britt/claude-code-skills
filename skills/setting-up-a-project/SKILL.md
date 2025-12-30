@@ -1,61 +1,49 @@
 ---
 name: setting-up-a-project
-description: Use when asked to setup a claude code project
+description: You MUST use this skill when the user asks you to setup a claude code project. You should also suggest it if there is no CLAUDE.md or when starting work on an empty codebase.
 ---
 
 # Setting up a Project
 
 ## Overview
 
-Help Claude author a CLAUDE.md file that defines a project's purpose, development practices, and tech stack before scaffolding code.
+Help Claude author a CLAUDE.md file that defines a project's purpose, development practices, and tech stack before writing code.
 
 **Core principle:** A well-configured project prevents rework and ensures consistency. Establishing guardrails upfront helps Claude Code work reliably, produce high-quality code, and avoid doom loops where code is written, broken, and rewritten repeatedly.
 
-**Announce at start:** "I'm using the setting-up-a-project skill to establish project configuration before writing code."
+## The Process
 
-## When to Use This Skill
+### Define the Project Purpose
 
-Use this skill when:
-- No CLAUDE.md exists in the project directory
-- The user asks to set up a new project
-- Starting work in a new or empty codebase
-
-## Step 1: Define the Project Purpose
-
-Use the `obra/brainstorming` skill to define the project. Once brainstorming is complete, read its output and extract:
-
-- **Project name** and one-line description
-- **Problem being solved** - what pain point or need does this address?
-
-### If obra/brainstorming is not installed
-
-Ask these questions directly:
+Ask questions to determine:
 
 1. **What should this project be called?** Get a name and brief description.
 2. **What problem does this solve?** Understand the pain point, who experiences it, and why existing solutions are inadequate.
 3. **How will it work?** Get a high-level explanation of the approach or mechanism.
 
-### Output
-
-Document the answers in CLAUDE.md under a `## Project Overview` section:
+Then update CLAUDE.md. Document the answers in CLAUDE.md under a `## Project Overview` section.
+Here's a template:
 
 ```markdown
 ## Project Overview
 
-**[Project Name]**: [One-line description]
+**Setting Up a Project Skill**: Helps Claude author a CLAUDE.md file that defines a project's purpose, development practices, and tech stack before writing code.
+
 
 ### Problem
 
-[Description of the problem being solved]
+Claude Code often writes unreliable, inconsistent or low quality code.
+It can make errors like adding two different unit testing frameworks to a project.
+It can also get stuck in doom loops where code is written, broken, and rewritten repeatedly.
 
 ### Approach
 
-[High-level explanation of how the project solves the problem]
+A well-configured project prevents rework and ensures consistency. Establishing guardrails upfront helps Claude Code work reliably, produce high-quality code, and avoid doom loops where code is written, broken, and rewritten repeatedly.
 ```
 
-## Step 2: Define the Tech Stack
+## Define the Tech Stack
 
-Ask the user about each of these areas. Even if something was mentioned during brainstorming, confirm it explicitly. Suggest sensible defaults based on the language/runtime.
+Ask the user about each of these areas. Suggest sensible defaults based on the language/runtime.
 
 ### Questions to Ask
 
@@ -81,9 +69,8 @@ When suggesting defaults, base them on the language:
 
 Adjust suggestions based on deployment target and project needs.
 
-### Output
-
-Document in CLAUDE.md under a `## Tech Stack` section:
+Document the output in CLAUDE.md under a `## Tech Stack` section.
+Here's a template:
 
 ```markdown
 ## Tech Stack
@@ -97,11 +84,18 @@ Document in CLAUDE.md under a `## Tech Stack` section:
 - **Key Libraries**: [List of essential libraries]
 ```
 
-## Step 3: Establish Development Practices
+After defining the tech stack:
+- confirm with the user
+- write the choices to `CLAUDE.md`
+- commit the file to git
+
+## Establish Development Practices
 
 ### TDD Rules (Mandatory)
 
-Read the contents of `@rules/TDD.rules.md` and copy it verbatim into CLAUDE.md. TDD is non-negotiable for all projects set up with this skill.
+TDD is non-negotiable for all projects set up with this skill.
+Read the contents of `https://raw.githubusercontent.com/britt/claude-code-skills/refs/heads/main/rules/TDD.rules.md` 
+and copy it verbatim into `CLAUDE.md`. 
 
 ### Git Practices
 
@@ -113,7 +107,7 @@ Ask the user about their preferred git workflow, then document it in CLAUDE.md:
 
 ### Commit Early, Commit Often (CRITICAL)
 
-**This rule is non-negotiable.** Add the following to CLAUDE.md:
+**This rule is non-negotiable.** Add the following to CLAUDE.md verbatim:
 
 ```markdown
 ## Git Commit Rules
@@ -135,7 +129,8 @@ Why this matters:
 
 ### Verification Plan
 
-Use the `writing-verification-plans` skill to create a verification plan. This produces a VERIFICATION_PLAN.md file that should be linked in CLAUDE.md:
+Use the `britt/writing-verification-plans` skill to create a verification plan. 
+This produces a VERIFICATION_PLAN.md file that should be linked in CLAUDE.md as shown below:
 
 ```markdown
 ## Verification
@@ -143,10 +138,17 @@ Use the `writing-verification-plans` skill to create a verification plan. This p
 See @VERIFICATION_PLAN.md for acceptance testing procedures.
 ```
 
-### Output
+## After Setting Up
 
-After completing this step, CLAUDE.md should contain:
-- Full TDD rules (copied from TDD.rules.md)
-- Git workflow and branching conventions
-- Commit early, commit often rules
-- Link to VERIFICATION_PLAN.md
+* Write the `CLAUDE.md` file
+* Use elements-of-style:writing-clearly-and-concisely skill if available
+* Commit the `CLAUDE.md` to git
+* Ask if the user would like to start brainstorming requirements or an implementation plan. Use `obra/brainstorming` or `obra/writing-plans` if they say yes.
+
+## Key Principles
+
+- **One question at a time** - Don't overwhelm with multiple questions
+- **Multiple choice preferred** - Easier to answer than open-ended when possible
+- **DRY ruthlessly** - Remove any repetition of instructions
+- **Incremental validation** - Present `CALUDE.md` in sections, validate each
+- **Be flexible** - Go back and clarify when something doesn't make sense
