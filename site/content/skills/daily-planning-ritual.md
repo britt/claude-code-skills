@@ -1,9 +1,15 @@
 ---
-title: "daily-planning-ritual"
+title: "Daily Planning Ritual"
 description: "Interactive daily planning across work and personal life dimensions"
 ---
 
-Interactive morning practice that helps plan the entire day holistically through a reflective conversation.
+# Daily Planning Ritual
+
+Interactive morning practice that helps you plan your entire day holistically through a reflective conversation across your work and personal life. It guides you through your calendar, email, and static commitments so you can create a realistic plan for the day.
+
+### Installation
+
+/plugin install daily-planning-ritual
 
 ## Compatibility
 
@@ -12,26 +18,23 @@ Interactive morning practice that helps plan the entire day holistically through
 | Claude Code | ✓ |
 | Claude.ai | ✓ |
 
-## When to Use
+## How to use it
 
-Use this skill when you want to plan your day with phrases like:
+You can trigger this skill with phrases like:
 - "plan the day"
 - "plan my day"
 - "plan today"
 
 ## Features
 
-- Gathers context from calendar, emails, and static sections
-- Conversational workflow across life dimensions (work, fitness, relationship, social, adventure)
-- Creates plans with poetic opening statements
-- Iterative refinement before finalizing
+**Context gathering across your life**
+Gathers context from your calendar, emails, and static sections so your plan reflects real constraints.
 
-## Installation
+**Conversational planning workflow**
+Leads a reflective, conversational workflow across life dimensions including work, fitness, relationship, social, and adventure.
 
-```bash
-/plugin install daily-planning-ritual
-```
+**Poetic openings to each day**
+Creates daily plans with a poetic opening statement to set the tone for your day.
 
-## Customization
-
-See the [README](https://github.com/britt/claude-code-skills/blob/main/skills/daily-planning-ritual/README.md) for configuration options.
+**Iterative refinement before finalizing**
+Helps you iteratively refine the plan before finalizing, so you end up with a schedule that truly fits your day.
