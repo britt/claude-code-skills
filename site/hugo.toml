@@ -1,0 +1,24 @@
+baseURL = 'https://britt.github.io/claude-code-skills/'
+languageCode = 'en-us'
+title = 'Claude Skills'
+theme = 'paper'
+
+[params]
+  color = 'linen'
+  twitter = ''
+  github = 'britt/claude-code-skills'
+  avatar = ''
+  name = 'Claude Skills'
+  bio = 'A collection of skills for Claude to enhance AI-assisted development workflows'
+
+[menu]
+  [[menu.main]]
+    identifier = "skills"
+    name = "Skills"
+    url = "/skills/"
+    weight = 1
+  [[menu.main]]
+    identifier = "docs"
+    name = "Docs"
+    url = "/docs/"
+    weight = 2
