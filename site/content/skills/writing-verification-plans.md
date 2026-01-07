@@ -3,8 +3,6 @@ title: "Writing Verification Plans"
 description: "Create real-world acceptance testing procedures"
 ---
 
-# Writing Verification Plans
-
 Create verification plans for real-world acceptance testing. Verification uses actual systems, never mocks.
 
 ### Installation
