@@ -134,6 +134,18 @@ Skills can be added to Claude.ai projects as project knowledge:
 
 **Note:** Some skills (like `summoning-the-user`) require Claude Code-specific features and won't work in Claude.ai.
 
+## Site Home Page and Footer
+
+The GitHub Pages site is built with Hugo using the `site/` directory. The home page content comes from `site/content/_index.md` and the layout from `site/layouts/index.html`. The site footer displays the `copyright` value configured in `site/hugo.toml`.
+
+By default, this is set to:
+
+```toml
+copyright = "© 2026 Snugglebear Team Company"
+```
+
+This footer text acts as the byline for the site.
+
 ## Rules
 
 The `rules/` directory contains reusable rule sets that can be copied into your project's CLAUDE.md.
