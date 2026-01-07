@@ -7,7 +7,9 @@ Write comprehensive product specification documents that clearly explain what yo
 
 ### Installation
 
+```bash
 /plugin install writing-product-specs
+```
 
 ## Compatibility
 

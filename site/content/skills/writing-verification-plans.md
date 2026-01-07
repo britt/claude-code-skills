@@ -7,7 +7,9 @@ Create verification plans for real-world acceptance testing. Verification uses a
 
 ### Installation
 
+```bash
 /plugin install writing-verification-plans
+```
 
 ## Compatibility
 

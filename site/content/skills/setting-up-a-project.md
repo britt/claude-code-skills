@@ -7,7 +7,9 @@ Author a CLAUDE.md file that defines your project's purpose, tech stack, and dev
 
 ### Installation
 
+```bash
 /plugin install setting-up-a-project
+```
 
 ## Compatibility
 

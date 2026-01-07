@@ -7,7 +7,9 @@ Gets your attention when Claude or background subagents reach a blocking decisio
 
 ### Installation
 
+```bash
 /plugin install summoning-the-user
+```
 
 ## Compatibility
 
