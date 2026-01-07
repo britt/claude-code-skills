@@ -3,20 +3,20 @@ title: "Claude Skills"
 description: "A collection of skills for Claude to enhance AI-assisted development workflows"
 ---
 
-## What are Claude Skills?
+## What Are Claude Skills?
 
-Skills are reusable instructions that enhance Claude's capabilities for specific tasks. They provide Claude with structured workflows, best practices, and domain expertise.
+Claude Skills are reusable instruction sets that give Claude structured workflows, best practices, and domain expertise for specific kinds of work. Instead of writing a new prompt every time, you install a skill once and reuse it whenever you need that capability. Each skill focuses on a concrete workflow, like planning your day, setting up a project, or writing specs and user stories.
 
 ## Available Skills
 
 | Skill | Description | Claude Code | Claude.ai |
 |-------|-------------|:-----------:|:---------:|
-| [daily-planning-ritual](/skills/daily-planning-ritual/) | Interactive daily planning across work and personal life dimensions | ✓ | ✓ |
-| [setting-up-a-project](/skills/setting-up-a-project/) | Author CLAUDE.md with project purpose, tech stack, and development practices | ✓ | |
-| [summoning-the-user](/skills/summoning-the-user/) | Gets user's attention when Claude needs input while running in the background | ✓ | |
-| [writing-product-specs](/skills/writing-product-specs/) | Write comprehensive product specification documents | ✓ | ✓ |
-| [writing-user-stories](/skills/writing-user-stories/) | Write properly formatted user stories for task definition | ✓ | ✓ |
-| [writing-verification-plans](/skills/writing-verification-plans/) | Create real-world acceptance testing procedures | ✓ | |
+| [Daily Planning Ritual](/skills/daily-planning-ritual/) | An interactive morning practice that helps you plan your entire day holistically through a reflective conversation across work and personal life dimensions, including calendar, email, and static commitments. | ✓ | ✓ |
+| [Setting Up a Project](/skills/setting-up-a-project/) | Authors a CLAUDE.md file that defines your project's purpose, tech stack, and development practices before any code is written, using brainstorming to clarify goals and establishing sensible defaults for tools, TDD rules, and git workflow. | ✓ | |
+| [Summoning the User](/skills/summoning-the-user/) | Gets your attention when Claude or background subagents reach a blocking decision, using a decision framework to decide when input is needed and triggering external notifications so you can unblock long-running workflows. | ✓ | |
+| [Writing Product Specs](/skills/writing-product-specs/) | Writes comprehensive product specification documents that clearly explain what you are building, why it matters, and how success will be measured, making it easier to align stakeholders around a shared understanding of the work. | ✓ | ✓ |
+| [Writing User Stories](/skills/writing-user-stories/) | Writes properly formatted user stories that identify the persona, desired action, and expected benefit so you can turn product ideas into clear, testable work items for implementation. | ✓ | ✓ |
+| [Writing Verification Plans](/skills/writing-verification-plans/) | Creates verification plans for real-world acceptance testing that define concrete scenarios, success criteria, and execution steps so Claude can run checks against actual systems and produce detailed verification logs. | ✓ | |
 
 ## Quick Start
 
