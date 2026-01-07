@@ -1,9 +1,15 @@
 ---
-title: "writing-verification-plans"
+title: "Writing Verification Plans"
 description: "Create real-world acceptance testing procedures"
 ---
 
+# Writing Verification Plans
+
 Create verification plans for real-world acceptance testing. Verification uses actual systems, never mocks.
+
+### Installation
+
+/plugin install writing-verification-plans
 
 ## Compatibility
 
@@ -12,7 +18,7 @@ Create verification plans for real-world acceptance testing. Verification uses a
 | Claude Code | ✓ |
 | Claude.ai | |
 
-## When to Use
+## How to use it
 
 Use this skill when:
 - Setting up a new project
@@ -20,13 +26,14 @@ Use this skill when:
 
 ## Features
 
-- Defines scenarios with concrete success criteria
-- Instructions for Claude to execute and validate
-- Runs automatically after completing tasks
-- Detailed verification logs
+**Concrete scenarios and success criteria**
+Defines scenarios with concrete success criteria for real-world verification.
 
-## Installation
+**Step-by-step execution instructions**
+Provides instructions for Claude to execute and validate each scenario.
 
-```bash
-/plugin install writing-verification-plans
-```
+**Automatic post-task verification**
+Runs verification automatically after completing tasks when configured to do so.
+
+**Detailed verification logs**
+Produces detailed verification logs documenting what was tested and what passed or failed.
