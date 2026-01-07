@@ -3,8 +3,6 @@ name: setting-up-a-project
 description: You MUST use this skill when the user asks you to setup a claude code project. You should also suggest it if there is no CLAUDE.md or when starting work on an empty codebase.
 ---
 
-# Setting up a Project
-
 ## Overview
 
 Help Claude author a CLAUDE.md file that defines a project's purpose, development practices, and tech stack before writing code.
