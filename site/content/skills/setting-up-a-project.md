@@ -1,9 +1,15 @@
 ---
-title: "setting-up-a-project"
+title: "Setting Up a Project"
 description: "Author CLAUDE.md with project purpose, tech stack, and development practices"
 ---
 
-Author a CLAUDE.md file that defines project purpose, tech stack, and development practices before scaffolding code.
+# Setting Up a Project
+
+Author a CLAUDE.md file that defines your project's purpose, tech stack, and development practices before any code is written. It uses brainstorming to clarify goals, choose a tech stack, and establish development conventions before scaffolding code.
+
+### Installation
+
+/plugin install setting-up-a-project
 
 ## Compatibility
 
@@ -12,7 +18,7 @@ Author a CLAUDE.md file that defines project purpose, tech stack, and developmen
 | Claude Code | ✓ |
 | Claude.ai | |
 
-## When to Use
+## How to use it
 
 Use this skill when:
 - Setting up a new project
@@ -21,13 +27,14 @@ Use this skill when:
 
 ## Features
 
-- Uses brainstorming to define project purpose
-- Establishes tech stack with sensible defaults
-- Copies TDD rules and git practices (commit early, commit often)
-- Creates verification plan via writing-verification-plans skill
+**Brainstorming-driven project definition**
+Uses a brainstorming workflow to define the project's purpose and align on what you are building.
 
-## Installation
+**Tech stack with sensible defaults**
+Establishes the tech stack with sensible defaults so you have a clear starting point.
 
-```bash
-/plugin install setting-up-a-project
-```
+**Development practices and git workflow**
+Copies test-driven development rules and git practices (including "commit early, commit often") into CLAUDE.md.
+
+**Verification plan integration**
+Creates a verification plan by invoking the Writing Verification Plans skill.
