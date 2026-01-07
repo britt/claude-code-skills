@@ -1,9 +1,15 @@
 ---
-title: "writing-user-stories"
+title: "Writing User Stories"
 description: "Write properly formatted user stories for task definition"
 ---
 
-Write properly formatted user stories that identify the persona, desired action, and expected benefit.
+# Writing User Stories
+
+Write properly formatted user stories that identify the persona, desired action, and expected benefit so you can turn product ideas into clear, testable work items.
+
+### Installation
+
+/plugin install writing-user-stories
 
 ## Compatibility
 
@@ -12,14 +18,8 @@ Write properly formatted user stories that identify the persona, desired action,
 | Claude Code | ✓ |
 | Claude.ai | ✓ |
 
-## When to Use
+## How to use it
 
 Use this skill when:
 - Asked to write user stories
 - Planning a feature
-
-## Installation
-
-```bash
-/plugin install writing-user-stories
-```

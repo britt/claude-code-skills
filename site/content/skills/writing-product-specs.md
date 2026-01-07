@@ -1,9 +1,15 @@
 ---
-title: "writing-product-specs"
+title: "Writing Product Specs"
 description: "Write comprehensive product specification documents"
 ---
 
-Write comprehensive product specification documents that clearly communicate what we're building, why, and how we'll know it's successful.
+# Writing Product Specs
+
+Write comprehensive product specification documents that clearly explain what you are building, why it matters, and how success will be measured. This makes it easier to align stakeholders around a shared understanding of the work.
+
+### Installation
+
+/plugin install writing-product-specs
 
 ## Compatibility
 
@@ -12,14 +18,8 @@ Write comprehensive product specification documents that clearly communicate wha
 | Claude Code | ✓ |
 | Claude.ai | ✓ |
 
-## When to Use
+## How to use it
 
 Use this skill when:
 - Designing a new feature
 - Asked to write a product spec or PRD
-
-## Installation
-
-```bash
-/plugin install writing-product-specs
-```

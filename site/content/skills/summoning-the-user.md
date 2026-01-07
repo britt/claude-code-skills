@@ -1,9 +1,15 @@
 ---
-title: "summoning-the-user"
+title: "Summoning the User"
 description: "Gets user's attention when Claude needs input while running in the background"
 ---
 
-Gets the user's attention when Claude (or subagents) are running in the background and need user input to proceed.
+# Summoning the User
+
+Gets your attention when Claude or background subagents reach a blocking decision and need your input to proceed. It uses a decision framework to decide when your input is required and triggers external notifications so you can unblock long-running workflows.
+
+### Installation
+
+/plugin install summoning-the-user
 
 ## Compatibility
 
@@ -12,18 +18,17 @@ Gets the user's attention when Claude (or subagents) are running in the backgrou
 | Claude Code | ✓ |
 | Claude.ai | |
 
-## When to Use
+## How to use it
 
-Use this skill when an agent encounters a blocking decision while running in the background.
+Use this skill when an agent encounters a blocking decision while running in the background and needs you to choose how to proceed.
 
 ## Features
 
-- Decision framework for assessing when user input is needed (high-risk vs low-risk)
-- External notification support (terminal-notifier, OSA Script, Slack CLI)
-- Proper terminal detection and activation
+**Decision framework for user input**
+Provides a decision framework that distinguishes between high-risk and low-risk situations to decide when your input is needed.
 
-## Installation
+**External notification support**
+Supports external notification tools such as terminal-notifier, OSA Script, and the Slack CLI so you can be notified outside the editor.
 
-```bash
-/plugin install summoning-the-user
-```
+**Terminal detection and activation**
+Performs proper terminal detection and activation so that notifications appear in the right place.
