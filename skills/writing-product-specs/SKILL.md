@@ -3,8 +3,6 @@ name: writing-product-specs
 description: Use when asked to design a new feature or project
 ---
 
-# Writing Product Specifications
-
 ## Overview
 
 Write comprehensive product specification documents that clearly communicate what we're building, why we're building it, and how we'll know it's successful. Document everything stakeholders need to understand: the problem context, target audience, requirements, success criteria, and tradeoffs. Give them a complete picture of the feature or project.
