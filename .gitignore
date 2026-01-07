@@ -58,3 +58,7 @@ venv/
 
 # Build output
 dist/
+
+# Hugo
+site/public/
+site/.hugo_build.lock
