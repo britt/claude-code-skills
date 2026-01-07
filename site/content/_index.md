@@ -3,10 +3,6 @@ title: "Claude Skills"
 description: "Claude Skills are reusable instruction sets that give Claude structured workflows, best practices, and domain expertise for specific kinds of work. Instead of writing a new prompt every time, you install a skill once and reuse it whenever you need that capability. Each skill focuses on a concrete workflow, like planning your day, setting up a project, or writing specs and user stories."
 ---
 
-## What Are Claude Skills?
-
-Claude Skills are reusable instruction sets that give Claude structured workflows, best practices, and domain expertise for specific kinds of work. Instead of writing a new prompt every time, you install a skill once and reuse it whenever you need that capability. Each skill focuses on a concrete workflow, like planning your day, setting up a project, or writing specs and user stories.
-
 ## Available Skills
 
 | Skill | Description | Claude Code | Claude.ai |
