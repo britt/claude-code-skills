@@ -3,6 +3,8 @@ name: writing-verification-plans
 description: Use when a project needs a verification plan for acceptance testing in real-world scenarios
 ---
 
+# Writing Verification Plans
+
 ## Overview
 
 Help Claude write verification plans that validate a project works in real-world scenarios before completing tasks.
