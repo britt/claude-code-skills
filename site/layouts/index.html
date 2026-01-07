@@ -29,16 +29,12 @@
 </div>
 {{- end -}}
 
-<!-- Skills List -->
-{{- $skills := where site.RegularPages "Section" "skills" -}}
-{{- range $skills -}}
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  <h2 class="my-0!">{{- .Title -}}</h2>
-  <p class="mt-2 text-sm opacity-80">{{- .Params.description -}}</p>
-  <a class="absolute inset-0 text-[0px]" href="{{- .Permalink -}}"
-    >{{- .Title -}}</a
-  >
-</section>
+<!-- Page content from _index.md -->
+{{- if .Content -}}
+<div class="prose dark:prose-invert max-w-none mb-12">
+  {{- .Content -}}
+</div>
 {{- end -}}
+
 
 {{- end -}}
