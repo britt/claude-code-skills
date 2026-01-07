@@ -7,7 +7,9 @@ Write properly formatted user stories that identify the persona, desired action,
 
 ### Installation
 
+```bash
 /plugin install writing-user-stories
+```
 
 ## Compatibility
 
