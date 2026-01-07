@@ -3,8 +3,6 @@ title: "Daily Planning Ritual"
 description: "Interactive daily planning across work and personal life dimensions"
 ---
 
-# Daily Planning Ritual
-
 Interactive morning practice that helps you plan your entire day holistically through a reflective conversation across your work and personal life. It guides you through your calendar, email, and static commitments so you can create a realistic plan for the day.
 
 ### Installation

@@ -3,8 +3,6 @@ title: "Summoning the User"
 description: "Gets user's attention when Claude needs input while running in the background"
 ---
 
-# Summoning the User
-
 Gets your attention when Claude or background subagents reach a blocking decision and need your input to proceed. It uses a decision framework to decide when your input is required and triggers external notifications so you can unblock long-running workflows.
 
 ### Installation
