@@ -3,8 +3,6 @@ title: "Setting Up a Project"
 description: "Author CLAUDE.md with project purpose, tech stack, and development practices"
 ---
 
-# Setting Up a Project
-
 Author a CLAUDE.md file that defines your project's purpose, tech stack, and development practices before any code is written. It uses brainstorming to clarify goals, choose a tech stack, and establish development conventions before scaffolding code.
 
 ### Installation
