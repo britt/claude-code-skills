@@ -3,6 +3,8 @@ name: writing-user-stories
 description: Use when an agent needs to write user stories for a project
 ---
 
+# Writing User Stories
+
 ## Overview
 
 Help Claude and subagents write properly formatted user stories for task definition.
