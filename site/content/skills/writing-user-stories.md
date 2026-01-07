@@ -3,8 +3,6 @@ title: "Writing User Stories"
 description: "Write properly formatted user stories for task definition"
 ---
 
-# Writing User Stories
-
 Write properly formatted user stories that identify the persona, desired action, and expected benefit so you can turn product ideas into clear, testable work items.
 
 ### Installation
