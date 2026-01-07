@@ -3,8 +3,6 @@ name: summoning-the-user
 description: Use when an agent encounters a blocking decision or when proceeding without user input could lead to wasted work - helps Claude determine when to block and request user input versus making reasonable assumptions
 ---
 
-# Summoning the User
-
 ## Overview
 
 Help Claude and subagents identify when to block and request user input rather than proceeding with assumptions or guesses.
