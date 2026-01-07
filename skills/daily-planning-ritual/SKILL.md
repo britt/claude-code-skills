@@ -3,8 +3,6 @@ name: day-planning
 description: Interactive daily planning ritual that guides the user through a reflective conversation across all life dimensions (work, fitness, relationship, social, adventure) and produces a holistic day plan. Use when the user requests to plan their day with phrases like "plan the day", "plan my day", "plan today", or similar variations.
 ---
 
-# Day Planning Ritual
-
 An interactive morning practice that helps plan the entire day holistically across work and personal life.
 
 ## Workflow Overview
