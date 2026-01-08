@@ -14,7 +14,6 @@ Claude skills are reusable instruction sets that enhance Claude's capabilities f
 The easiest way to install skills in Claude Code:
 
 ```bash
-# Add the marketplace
 /plugin marketplace add britt/claude-code-skills
 ```
 
