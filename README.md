@@ -91,22 +91,17 @@ Add this repository as a plugin marketplace:
 Skills can be installed globally or per-project.
 
 **Global installation** (available in all projects):
+
 ```bash
 # Clone the entire repository
 git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claude-code-skills
-
-# Or copy individual skills
-mkdir -p ~/.claude/skills/summoning-the-user
-curl -o ~/.claude/skills/summoning-the-user/SKILL.md \
-  https://raw.githubusercontent.com/britt/claude-code-skills/main/skills/summoning-the-user/SKILL.md
 ```
 
 **Project-specific installation**:
+
 ```bash
-mkdir -p .claude/skills
-curl -o .claude/skills/summoning-the-user/SKILL.md \
-  --create-dirs \
-  https://raw.githubusercontent.com/britt/claude-code-skills/main/skills/summoning-the-user/SKILL.md
+# Clone the entire repository into the project
+git clone https://github.com/britt/claude-code-skills.git .claude/skills/claude-code-skills
 ```
 
 Restart Claude Code after installation to load new skills.
