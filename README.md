@@ -154,10 +154,6 @@ Fill in the placeholder commands (`<test command>`, `<build command>`, etc.) for
 - [Contributing Guide](CONTRIBUTING.md) - Repository structure, creating skills, and contribution guidelines
 - [Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills) - Official documentation
 
-## License
-
-[MIT](LICENSE)
-
 2. **Add to your Claude.ai project**
    - Open [claude.ai](https://claude.ai) and go to your project
    - Click on **Project knowledge** in the sidebar
