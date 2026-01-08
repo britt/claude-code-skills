@@ -8,7 +8,7 @@ Write properly formatted user stories that identify the persona, desired action,
 ### Installation
 
 ```bash
-/plugin install writing-user-stories
+/plugin marketplace add britt/claude-code-skills
 ```
 
 ## Compatibility

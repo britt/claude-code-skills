@@ -14,11 +14,7 @@ Claude skills are reusable instruction sets that enhance Claude's capabilities f
 The easiest way to install skills in Claude Code:
 
 ```bash
-# Add the marketplace
 /plugin marketplace add britt/claude-code-skills
-
-# Install a skill
-/plugin install writing-product-specs
 ```
 
 ### Global Installation
@@ -34,10 +30,8 @@ git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claud
 Install skills for a specific project:
 
 ```bash
-mkdir -p .claude/skills
-curl -o .claude/skills/writing-product-specs/SKILL.md \
-  --create-dirs \
-  https://raw.githubusercontent.com/britt/claude-code-skills/main/skills/writing-product-specs/SKILL.md
+# Clone the entire repository into the project
+git clone https://github.com/britt/claude-code-skills.git .claude/skills/claude-code-skills
 ```
 
 ### Claude.ai

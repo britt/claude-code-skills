@@ -8,7 +8,7 @@ Interactive morning practice that helps you plan your entire day holistically th
 ### Installation
 
 ```bash
-/plugin install daily-planning-ritual
+/plugin marketplace add britt/claude-code-skills
 ```
 
 ## Compatibility
