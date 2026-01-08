@@ -154,46 +154,6 @@ Fill in the placeholder commands (`<test command>`, `<build command>`, etc.) for
 - [Contributing Guide](CONTRIBUTING.md) - Repository structure, creating skills, and contribution guidelines
 - [Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills) - Official documentation
 
-2. **Add to your Claude.ai project**
-   - Open [claude.ai](https://claude.ai) and go to your project
-   - Click on **Project knowledge** in the sidebar
-   - Upload the zip file
-
-3. **Use the skill**
-   - The skill will be available in all conversations within that project
-   - Claude will automatically use it when the context matches the skill's description
-
-**Note:** Some skills (like `summoning-the-user`) require Claude Code-specific features and won't work in Claude.ai.
-
-## Rules
-
-The `rules/` directory contains reusable rule sets that can be copied into your project's CLAUDE.md.
-
-### TDD.rules.md
-
-Strict Test-Driven Development rules for Claude. Used by the `setting-up-a-project` skill.
-
-**Key rules:**
-- No production code without a failing test first (RED-GREEN-REFACTOR)
-- 90%+ test coverage required on all metrics
-- Violations mean delete and start over
-- Commit early, commit often (after every TDD cycle)
-- Tasks aren't complete until tests pass, build succeeds, and no linter errors
-
-**Usage:** The `setting-up-a-project` skill copies this file verbatim into your project's CLAUDE.md. You can also copy it manually:
-
-```bash
-curl -o CLAUDE.md \
-  https://raw.githubusercontent.com/britt/claude-code-skills/main/rules/TDD.rules.md
-```
-
-Fill in the placeholder commands (`<test command>`, `<build command>`, etc.) for your tech stack.
-
-## Documentation
-
-- [Contributing Guide](CONTRIBUTING.md) - Repository structure, creating skills, and contribution guidelines
-- [Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills) - Official documentation
-
 ## License
 
 [MIT](LICENSE)
