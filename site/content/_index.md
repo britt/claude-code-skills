@@ -23,8 +23,7 @@ description: "Claude Skills are reusable instruction sets that give Claude struc
 /plugin marketplace add britt/claude-code-skills
 ```
 
-
-```bash
+### Manual Installation
 # Clone to global skills directory
 git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claude-code-skills
 ```
