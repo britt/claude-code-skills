@@ -16,9 +16,6 @@ The easiest way to install skills in Claude Code:
 ```bash
 # Add the marketplace
 /plugin marketplace add britt/claude-code-skills
-
-# Install a skill
-/plugin install writing-product-specs
 ```
 
 ### Global Installation
