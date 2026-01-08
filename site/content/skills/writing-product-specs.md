@@ -15,8 +15,8 @@ Write comprehensive product specification documents that clearly explain what yo
 
 | Platform | Supported |
 |----------|:---------:|
-| Claude Code |  |
-| Claude.ai |  |
+| Claude Code | ✓ |
+| Claude.ai | ✓ |
 
 ## How to use it
 
