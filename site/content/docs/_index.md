@@ -17,9 +17,7 @@ The easiest way to install skills in Claude Code:
 /plugin marketplace add britt/claude-code-skills
 ```
 
-
-Install skills globally so they're available in all projects:
-
+### Global Installation
 ```bash
 git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claude-code-skills
 ```
