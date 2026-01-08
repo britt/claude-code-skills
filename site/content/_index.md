@@ -24,6 +24,8 @@ description: "Claude Skills are reusable instruction sets that give Claude struc
 ```
 
 ### Manual Installation
+
+```bash
 # Clone to global skills directory
 git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claude-code-skills
 ```
