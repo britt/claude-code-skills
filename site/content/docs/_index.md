@@ -31,10 +31,8 @@ git clone https://github.com/britt/claude-code-skills.git ~/.claude/skills/claud
 Install skills for a specific project:
 
 ```bash
-mkdir -p .claude/skills
-curl -o .claude/skills/writing-product-specs/SKILL.md \
-  --create-dirs \
-  https://raw.githubusercontent.com/britt/claude-code-skills/main/skills/writing-product-specs/SKILL.md
+# Clone the entire repository into the project
+git clone https://github.com/britt/claude-code-skills.git .claude/skills/claude-code-skills
 ```
 
 ### Claude.ai
