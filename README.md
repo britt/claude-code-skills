@@ -80,14 +80,10 @@ Create verification plans for real-world acceptance testing. Verification uses a
 
 ### Claude Code: Plugin Marketplace (Recommended)
 
-Add this repository as a plugin marketplace, then install the plugin:
+Add this repository as a plugin marketplace:
 
 ```bash
-# Add the marketplace
 /plugin marketplace add britt/claude-code-skills
-
-# Install the plugin (includes all skills)
-/plugin install claude-code-skills@britt
 ```
 
 ### Claude Code: Manual Installation
