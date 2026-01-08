@@ -19,7 +19,6 @@ description: "Claude Skills are reusable instruction sets that give Claude struc
 ### Claude Code (Recommended)
 
 ```bash
-# Add the marketplace
 /plugin marketplace add britt/claude-code-skills
 ```
 
