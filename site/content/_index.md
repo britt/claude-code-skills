@@ -21,9 +21,6 @@ description: "Claude Skills are reusable instruction sets that give Claude struc
 ```bash
 # Add the marketplace
 /plugin marketplace add britt/claude-code-skills
-
-# Install a specific skill
-/plugin install writing-product-specs
 ```
 
 ### Manual Installation
