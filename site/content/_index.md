@@ -12,7 +12,7 @@ description: "Claude Skills are reusable instruction sets that give Claude struc
 | [Summoning the User](./skills/summoning-the-user/) | Gets your attention when Claude or background subagents reach a blocking decision, using a decision framework to decide when input is needed and triggering external notifications so you can unblock long-running workflows. | ✓ | |
 | [Writing Product Specs](./skills/writing-product-specs/) | Writes comprehensive product specification documents that clearly explain what you are building, why it matters, and how success will be measured, making it easier to align stakeholders around a shared understanding of the work. | ✓ | ✓ |
 | [Writing User Stories](./skills/writing-user-stories/) | Writes properly formatted user stories that identify the persona, desired action, and expected benefit so you can turn product ideas into clear, testable work items for implementation. | ✓ | ✓ |
-| [Working on an Issue](./skills/working-on-an-issue/) | A structured workflow for implementing GitHub issues with verification, following an Understand → Plan → Verify → Implement → Verify Again loop. | ✓ | |
+| [Writing Verification Plans](./skills/writing-verification-plans/) | Creates verification plans for real-world acceptance testing that define concrete scenarios, success criteria, and execution steps so Claude can run checks against actual systems and produce detailed verification logs. | ✓ | |
 
 ## Quick Start
 
