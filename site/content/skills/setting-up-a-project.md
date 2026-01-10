@@ -7,8 +7,17 @@ Author a CLAUDE.md file that defines your project's purpose, tech stack, and dev
 
 ### Installation
 
+Add the marketplace and install this skill:
+
 ```bash
 /plugin marketplace add britt/claude-code-skills
+/plugin install britt/setting-up-a-project
+```
+
+Or install all skills at once:
+
+```bash
+/plugin install britt/claude-code-skills
 ```
 
 ## Compatibility
