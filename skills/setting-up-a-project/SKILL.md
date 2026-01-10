@@ -150,5 +150,5 @@ See @VERIFICATION_PLAN.md for acceptance testing procedures.
 - **One question at a time** - Don't overwhelm with multiple questions
 - **Multiple choice preferred** - Easier to answer than open-ended when possible
 - **DRY ruthlessly** - Remove any repetition of instructions
-- **Incremental validation** - Present `CALUDE.md` in sections, validate each
+- **Incremental validation** - Present `CLAUDE.md` in sections, validate each
 - **Be flexible** - Go back and clarify when something doesn't make sense

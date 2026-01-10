@@ -1,9 +1,5 @@
 # Rules for Claude
 
-## Project Overview
-
-<Write a brief overview of the project here>
-
 ## ABSOLUTE RULES - NO EXCEPTIONS
 
 ### 1. Test-Driven Development is MANDATORY
