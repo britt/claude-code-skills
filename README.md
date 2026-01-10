@@ -11,7 +11,8 @@ A collection of skills for Claude to enhance AI-assisted development workflows.
 | **summoning-the-user** | Gets user's attention when Claude needs input while running in the background | * | |
 | **writing-product-specs** | Write comprehensive product specification documents | * | * |
 | **writing-user-stories** | Write properly formatted user stories for task definition | * | * |
-| **writing-verification-plans** | Create real-world acceptance testing procedures | * | |
+| **writing-verification-plans** | Acceptance test verification plans (real-world testing, never mocks) | * | * |
+| **working-on-an-issue** | Use when asked to work on, read, or implement a GitHub issue. | * | |
 
 ### daily-planning-ritual
 
@@ -101,6 +102,7 @@ Add this repository as a plugin marketplace:
 /plugin install britt/writing-product-specs
 /plugin install britt/writing-user-stories
 /plugin install britt/writing-verification-plans
+/plugin install britt/working-on-an-issue
 ```
 
 ### Claude Code: Manual Installation
