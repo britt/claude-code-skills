@@ -3,15 +3,9 @@ title: "Working on an Issue"
 description: "A structured workflow for implementing GitHub issues with verification"
 ---
 
-A structured workflow for implementing GitHub issues with verification.
+Use this skill when asked to work on, read, or implement a GitHub issue.
 
-**Core Principle:** Understand → Plan → Verify → Implement → Verify Again
-
-## When to Use
-
-- Asked to work on a GitHub issue
-- Asked to implement an issue
-- Provided an issue URL or number
+The workflow is intentionally repetitive: **Understand → Plan → Verify → Implement → Verify Again**.
 
 ## Installation
 
@@ -28,15 +22,27 @@ Or install all skills at once:
 /plugin install britt/claude-code-skills
 ```
 
-## Pre-flight Checklist
+## Compatibility
 
-Before starting:
+| Platform | Supported |
+|----------|:---------:|
+| Claude Code | ✓ |
+| Claude.ai | |
+
+## How to use it
+
+Use this skill when:
+- Asked to work on a GitHub issue
+- Asked to implement an issue
+- Provided an issue URL or number
+
+To start, provide the issue URL or number. The skill’s pre-flight checklist requires:
 - Issue URL or number obtained
 - Repository cloned and on correct branch
-- CLAUDE.md exists (or run `setting-up-a-project` first)
+- `CLAUDE.md` exists (or run `setting-up-a-project` first)
 - Developer available for questions (or async mode agreed)
 
-## The Process
+## Workflow
 
 ### 1. Read and understand the issue
 
@@ -54,13 +60,13 @@ Do not assume or invent requirements not in the issue.
 
 ### 2. Write an implementation plan
 
-Create a plan that covers:
+Create a brief plan covering:
 1. What changes are needed
 2. Which files will be modified/created
 3. Order of implementation
 4. Risks or unknowns
 
-Save to `docs/plans/issue-<number>-plan.md` and get developer approval before proceeding.
+Save it to `docs/plans/issue-<number>-plan.md` and get developer approval before proceeding.
 
 ### 3. Write a verification plan
 
@@ -76,9 +82,19 @@ Use the `writing-verification-plans` skill to create acceptance tests for the is
 
 Run the verification plan and report results using the verification log format from `writing-verification-plans`.
 
-## Absolute Rules
+## Features and benefits
 
-- No assumptions: ask if anything is unclear
-- No scope creep: only implement what’s specified
-- Verification required: task is incomplete until verification passes or manual verification is confirmed
-- Blocked = stop: if blocked, use the `summoning-the-user` skill
+**Forces early clarity**
+Starts by reading the issue and explicitly clarifying ambiguity, missing acceptance criteria, or unclear scope.
+
+**Plan-first, with explicit approval**
+Requires an implementation plan saved to `docs/plans/issue-<number>-plan.md` and developer approval before changes begin.
+
+**Verification is part of the workflow (twice)**
+Creates a verification plan up front, then runs verification after implementation.
+
+**Controls risk and scope**
+Uses explicit rules like “no assumptions” and “no scope creep” to keep work aligned to the issue.
+
+**Clear stop conditions**
+If blocked, stop and use the `summoning-the-user` skill rather than guessing.
