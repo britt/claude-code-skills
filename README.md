@@ -101,6 +101,7 @@ Add this repository as a plugin marketplace:
 /plugin install britt/summoning-the-user
 /plugin install britt/writing-product-specs
 /plugin install britt/writing-user-stories
+/plugin install britt/writing-verification-plans
 /plugin install britt/working-on-an-issue
 ```
 
