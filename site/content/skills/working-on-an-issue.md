@@ -1,11 +1,9 @@
 ---
 title: "Working on an Issue"
-description: "A structured workflow for implementing GitHub issues with verification"
+description: "Implement GitHub issues with verification"
 ---
 
-Implement a GitHub issue with a repeatable, verification-driven workflow.
-
-This skill follows an intentionally repetitive loop: **Understand → Plan → Verify → Implement → Verify Again**. The goal is to reduce ambiguity, keep scope aligned to the issue, and make “done” verifiable.
+Implement a GitHub issue with a repeatable, verification-driven approach.
 
 ### Installation
 
@@ -48,7 +46,7 @@ Before proceeding, confirm the pre-flight checklist:
 
 ## Features
 
-**A plan-first workflow with explicit approval**
+**A plan-first approach with explicit approval**
 Writes an implementation plan and saves it to `docs/plans/issue-<number>-plan.md`, then waits for approval before making changes.
 
 **Verification is part of the process (twice)**
