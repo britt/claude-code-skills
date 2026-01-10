@@ -86,6 +86,23 @@ Add this repository as a plugin marketplace:
 /plugin marketplace add britt/claude-code-skills
 ```
 
+**Install all skills:**
+
+```bash
+/plugin install britt/claude-code-skills
+```
+
+**Install individual skills:**
+
+```bash
+/plugin install britt/daily-planning-ritual
+/plugin install britt/setting-up-a-project
+/plugin install britt/summoning-the-user
+/plugin install britt/writing-product-specs
+/plugin install britt/writing-user-stories
+/plugin install britt/writing-verification-plans
+```
+
 ### Claude Code: Manual Installation
 
 Skills can be installed globally or per-project.

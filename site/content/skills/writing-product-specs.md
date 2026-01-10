@@ -7,8 +7,17 @@ Write comprehensive product specification documents that clearly explain what yo
 
 ### Installation
 
+Add the marketplace and install this skill:
+
 ```bash
 /plugin marketplace add britt/claude-code-skills
+/plugin install britt/writing-product-specs
+```
+
+Or install all skills at once:
+
+```bash
+/plugin install britt/claude-code-skills
 ```
 
 ## Compatibility
